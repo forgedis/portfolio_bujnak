@@ -1,7 +1,11 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+@font-face {
+  font-family: runescape;
+  src: url(fonts/47micro0.ttf);
+}
+
+@font-face {
+  font-family: runescape2;
+  src: url(fonts/fortyseven0.ttf);
 }
 
 /* Custom Properties, update these for your own design */
@@ -9,16 +13,22 @@
 :root {
   --ff-primary: "Source Sans Pro", sans-serif;
   --ff-secondary: "Source Code Pro", monospace;
+  --ff-sanchez: "Sanchez", serif;
 
-  --fw-reg: 300;
+  --ff-runescape-micro: "FortySeven Micro NBP", sans-serif;
+  --ff-runescape: "FortySeven NBP", sans-serif;
+  --ff-nunito: "Nunito", sans-serif;
+
+  --fw-light: 100;
+  --fw-reg: 400;
   --fw-bold: 900;
 
   --clr-light: #fff;
-  --clr-dark: #303030;
-  --clr-accent: #4169e1;
+  --clr-shadow: rgba(75, 72, 72, 1);
+  --clr-dark: #18191a;
 
   --fs-h1: 3rem;
-  --fs-h2: 2.25rem;
+  --fs-h2: 1.75rem;
   --fs-h3: 1.25rem;
   --fs-body: 1rem;
 
@@ -26,10 +36,10 @@
     0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
 }
 
-@media (min-width: 800px) {
+@media (min-width: 600px) {
   :root {
     --fs-h1: 4.5rem;
-    --fs-h2: 3.75rem;
+    --fs-h2: 2rem;
     --fs-h3: 1.5rem;
     --fs-body: 1.125rem;
   }
@@ -69,8 +79,8 @@ strong {
 .btn {
   display: inline-block;
   padding: 0.5em 2.5em;
-  background: var(--clr-accent);
-  color: var(--clr-dark);
+  background: var(--clr-light);
+  color: var(--clr-);
   text-decoration: none;
   cursor: pointer;
   font-size: 0.8rem;
@@ -108,23 +118,25 @@ h3 {
 }
 
 .section__title--intro {
+  font-family: var(--ff-nunito);
   font-weight: var(--fw-reg);
 }
 
 .section__title--intro strong {
-  display: block;
+  font-family: var(--ff-nunito);
+  font-weight: var(--fw-bold);
 }
 
 .section__subtitle {
   margin: 0;
-  font-size: var(--fs-h3);
+  font-size: var(--fs-h2);
 }
 
 .section__subtitle--intro,
 .section__subtitle--about {
   background: var(--clr-accent);
   padding: 0.25em 1em;
-  font-family: var(--ff-secondary);
+  font-family: var(--ff-nunito);
   margin-bottom: 1em;
 }
 
@@ -136,8 +148,14 @@ nav {
 
 /*  Intro section  */
 
+.intro {
+  position: relative;
+  height: 670px;
+}
+
 .background--intro {
   position: absolute;
+
   left: 0;
   top: 0;
   right: 0;
@@ -157,78 +175,114 @@ nav {
       rgba(75, 72, 72, 1) 82%,
       rgba(75, 72, 72, 1) 100%
     );
+
+  transform: scaleX(100%);
 }
 
-.intro {
+.intro__img-me {
+  height: 500px;
+  width: auto;
+  min-width: fit-content;
+  margin: 0 auto;
   position: relative;
-  height: 100vh;
-
-  /* radial-gradient(ellipse at top, #E5E5E5 0%,#E6E4DB 40%,#E9E0C1 50%, #EED889 60%, #303030 100%); */
-
-  /* background: 
-    radial-gradient(circle at 38% 7% ,rgba(255,255,000,1) 20%,rgba(255,255,000,.0) 38%),
-    radial-gradient(circle at 50% 0%,rgba(128,255,000,1) 22%,rgba(128,255,000,.0) 48%),
-    radial-gradient(circle at 75% 7% ,rgba(000,255,000,1) 22%,rgba(000,255,000,.0) 48%),
-    radial-gradient(circle at 93% 24%  ,rgba(000,255,128,1) 22%,rgba(000,255,128,.0) 48%),
-    radial-gradient(circle at 100% 50% ,rgba(000,255,255,1) 22%,rgba(000,255,255,.0) 48%),
-    radial-gradient(circle at 93% 75% ,rgba(000,128,255,1) 22%,rgba(000,128,255,.0) 48%),
-    radial-gradient(circle at 75% 93% ,rgba(000,000,255,1) 22%,rgba(000,000,255,.0) 48%),
-    radial-gradient(circle at 50% 100% ,rgba(128,000,255,1) 22%,rgba(128,000,255,.0) 48%),
-    radial-gradient(circle at 25% 93% ,rgba(255,000,255,1) 22%,rgba(255,000,255,.0) 48%),
-    radial-gradient(circle at 7% 75%,rgba(255,000,128,1) 22%,rgba(255,000,128,.0) 48%),
-    radial-gradient(circle at 0% 50%,rgba(255,000,000,1) 22%,rgba(255,000,000,.0) 48%),
-    radial-gradient(circle at 7% 25%,rgba(255,128,000,1) 22%,rgba(255,128,000,.0) 48%); */
+  filter: drop-shadow(20px 20px 25px rgba(0, 0, 0, 0.25));
 }
 
-.intro__img {
-  position: relative;
+.intro__img-moon {
   display: none;
 }
 
+.section__title--intro {
+  position: relative;
+}
+
 .section__subtitle--intro {
-  display: inline-block;
+  position: relative;
+  font-weight: var(--fw-light);
+  right: 0.94em;
 }
 
 @media (min-width: 600px) {
   .intro {
-    display: grid;
+    height: 760px;
     width: 100%;
     margin: 0 auto;
-    grid-column-gap: 1em;
-    grid-template-areas:
-      "img title"
-      "img subtitle";
-    grid-template-columns: min-content max-content;
-  }
-
-  .intro__img {
-    grid-area: img;
-    min-width: 250px;
-    position: relative;
-    z-index: 2;
-  }
-
-  .section__subtitle--intro {
-    align-self: start;
-    grid-column: -1 / 1;
-    grid-row: 2;
-    text-align: right;
-    position: relative;
-    left: -1.5em;
-    width: calc(100% + 1.5em);
   }
 
   .background--intro {
     transform: scaleX(200%);
+  }
+
+  .background--intro {
+    background: rgb(229, 229, 229);
+    background: radial-gradient(
+        circle at 50% -50%,
+        rgba(229, 229, 229, 1) 29%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 50% -50%,
+        rgba(230, 228, 219, 1) 14%,
+        rgba(233, 224, 193, 1) 28%,
+        rgba(238, 216, 137, 1) 40%,
+        rgba(75, 72, 72, 1) 67%,
+        rgba(75, 72, 72, 1) 90%
+      );
+
+    transform: scaleX(200%);
+  }
+
+  .intro__img-me {
+    position: relative;
+    height: 100vw;
+    width: auto;
+    max-height: 1000px;
+    min-width: fit-content;
+    margin: 0 auto;
+    left: 300px;
+    bottom: 150px;
+    filter: drop-shadow(20px 20px 25px rgba(0, 0, 0, 0.25));
+    z-index: 2;
+  }
+
+  .intro__img-moon {
+    position: absolute;
+    /* width: 1050px;
+    height: 1050px; */
+    height: 50vw;
+    width: 50vw;
+    left: -186px;
+    display: block;
+    top: 300px;
+    filter: drop-shadow(20px 20px 25px rgba(0, 0, 0, 0.25));
+  }
+
+  .section__title--intro {
+    position: relative;
+    top: 50px;
+    right: 0;
+    bottom: 0;
+    left: 2em;
+  }
+
+  .section__subtitle--intro {
+    position: absolute;
+    font-size: var(--fs-h2);
+    left: 2.5rem;
   }
 }
 
 /*  My services section  */
 
 .my-services {
-  background-color: var(--clr-dark);
-  background-image: url(../img/services-bg.jpg);
-  background-size: cover;
+  background: rgb(76, 72, 72);
+  background: linear-gradient(
+    180deg,
+    rgba(76, 72, 72, 1) 0%,
+    rgba(70, 67, 67, 1) 68%,
+    rgba(24, 25, 26, 1) 100%
+  );
+
   /* background-blend-mode: multiply; */
   color: var(--clr-light);
   text-align: center;
@@ -258,7 +312,7 @@ nav {
   margin: 0 auto;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 600px) {
   .services {
     display: flex;
     max-width: 1000px;
@@ -270,4 +324,10 @@ nav {
     /* if 2 same are nearby*/
     margin-left: 2em;
   }
+}
+
+/*  Skills section  */
+
+.about-me {
+  background-color: var(--clr-dark);
 }
