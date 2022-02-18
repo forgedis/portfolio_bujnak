@@ -54,7 +54,6 @@ body {
   font-family: var(--ff-primary);
   font-size: var(--fs-body);
   line-height: 1.6;
-  overflow-x: hidden;
 }
 
 .wrapper {
@@ -185,12 +184,16 @@ nav {
 }
 
 .intro__img-me {
-  height: 500px;
-  width: 50px;
-  min-width: fit-content;
+  height: 50%;
   margin: 0 auto;
-  position: relative;
+  top: 34%;
+  left: 50%;
+
+  margin-left: -12em;
+  min-width: fit-content;
+  position: absolute;
   filter: drop-shadow(20px 20px 25px rgba(0, 0, 0, 0.25));
+  z-index: 2;
 }
 
 .intro__img-moon {
