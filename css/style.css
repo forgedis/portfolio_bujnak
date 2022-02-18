@@ -36,7 +36,7 @@
     0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
 }
 
-@media (min-width: 600px) {
+@media (min-width: 550px) {
   :root {
     --fs-h1: 4.5rem;
     --fs-h2: 2rem;
@@ -61,7 +61,7 @@ body {
 }
 
 section {
-  padding: 5em 2em;
+  /* padding: 5em 2em; */
 }
 
 img {
@@ -154,7 +154,8 @@ nav {
 
 .intro {
   position: relative;
-  height: 670px;
+  height: 770px;
+  padding: 5em 2em;
 }
 
 .background--intro {
@@ -196,7 +197,7 @@ nav {
 }
 
 /* removing moon */
-@media (max-width: 550px) {
+@media (max-width: 549px) {
   .intro__img-moon {
     display: none;
   }
@@ -240,8 +241,8 @@ nav {
 
   .intro__img-me {
     position: absolute;
-    top: -32%;
-    left: 30%;
+    top: -33%;
+    left: 25%;
 
     height: auto;
     width: auto;
@@ -254,43 +255,31 @@ nav {
     filter: drop-shadow(20px 20px 25px rgba(0, 0, 0, 0.25));
     z-index: 2;
   }
-  /* first  pop */
-  @media (max-width: 1300px) {
+
+  /* first pop */
+  @media (max-width: 1380px) {
     .intro__img-me {
-      position: absolute;
       top: -10%;
       left: 25%;
-
-      height: auto;
-      width: auto;
-      min-width: 75px;
       max-height: 750px;
-
-      margin-left: 20%;
-      margin-top: 20%;
-
-      filter: drop-shadow(20px 20px 25px rgba(0, 0, 0, 0.25));
-      z-index: 2;
     }
   }
 
-  /* second  pop */
+  /* second pop */
   @media (max-width: 1000px) {
     .intro__img-me {
-      position: absolute;
       top: 8%;
       left: 23%;
-
-      height: auto;
-      width: auto;
-      min-width: 75px;
       max-height: 550px;
+    }
+  }
 
-      margin-left: 20%;
-      margin-top: 20%;
-
-      filter: drop-shadow(20px 20px 25px rgba(0, 0, 0, 0.25));
-      z-index: 2;
+  /* third pop */
+  @media (max-width: 700px) {
+    .intro__img-me {
+      top: 20%;
+      left: 20%;
+      max-height: 450px;
     }
   }
 
@@ -298,8 +287,8 @@ nav {
     position: absolute;
     /* width: 1050px;
     height: 1050px; */
-    height: 50vw;
-    width: 50vw;
+    height: 55vw;
+    width: 55vw;
     left: -7%;
     top: 45%;
     filter: drop-shadow(20px 20px 25px rgba(0, 0, 0, 0.25));
@@ -307,17 +296,16 @@ nav {
   }
 
   .section__title--intro {
-    position: relative;
-    top: 50px;
-    right: 0;
-    bottom: 0;
+    position: absolute;
+    top: 3em;
     left: 2em;
   }
 
   .section__subtitle--intro {
     position: absolute;
     font-size: var(--fs-h2);
-    left: 2.5rem;
+    top: 9em;
+    left: 3.6em;
   }
 }
 
