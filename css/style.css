@@ -61,7 +61,7 @@ body {
 }
 
 section {
-  /* padding: 5em 2em; */
+  padding: 5em 2em;
 }
 
 img {
@@ -155,12 +155,11 @@ nav {
 .intro {
   position: relative;
   height: 770px;
-  padding: 5em 2em;
 }
 
 .background--intro {
   position: absolute;
-
+  z-index: -2;
   left: 0;
   top: 0;
   right: 0;
@@ -213,6 +212,7 @@ nav {
   right: 0.94em;
 }
 
+/* BIG WIDTH */
 @media (min-width: 550px) {
   .intro {
     height: 760px;
@@ -296,18 +296,89 @@ nav {
   }
 
   .section__title--intro {
-    position: absolute;
-    top: 3em;
-    left: 2em;
+    position: relative;
+
   }
 
   .section__subtitle--intro {
-    position: absolute;
+    position: relative;
     font-size: var(--fs-h2);
-    top: 9em;
-    left: 3.6em;
+   
   }
+  /*social menu*/
+  .social-menu ul {
+    position: relative;
+    bottom: 20px;
+    right: 15px;
+    padding: 0;
+    margin: 0;
+    display: flex;
 }
+.social-menu ul li {
+    list-style: none;
+    
+    margin: 0 20px;
+    
+}
+.social-menu ul li .fab {
+    color: #000000;
+    font-size: 32px;
+    line-height: 50px;
+    
+}
+
+.social-menu ul li a {
+    position: relative;
+    display: block;
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: #000000;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #C4C4C4;
+    text-align: center;
+    transition: all 0.2s;
+  
+    
+  
+}
+
+.social-menu a:hover{
+  transform: scale(1.2);
+ 
+}
+
+
+.social-menu ul li a:hover > i {
+    color: #fff;
+    
+}
+.social-menu ul li:nth-child(1) a:hover {
+    background-color: #3b5999;
+    
+    
+}
+.social-menu ul li:nth-child(2) a:hover {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.social-menu ul li:nth-child(3) a:hover {
+    background-color: #0A68BE;
+}
+.social-menu ul li:nth-child(4) a:hover {
+    background-color: #1DA1F2;
+}
+.social-menu ul li:nth-child(5) a:hover {
+    background-color: #24292f;
+}
+.social-menu ul li:nth-child(6) a:hover {
+  background-color: #7289DA;
+}
+/*social menu end*/
+
+}
+/* BIG WIDTH END */
 
 /*  My services section  */
 
